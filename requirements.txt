@@ -1,0 +1,6 @@
+pyrogram
+tgcrypto
+selenium-wire
+webdriver-manager
+fastapi
+uvicorn[standard]

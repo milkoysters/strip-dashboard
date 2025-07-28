@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strip Downloader Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Strip Downloader Dashboard</h1>
+        <div id="status-cards">
+            <div class="card">
+                <h3>Đang Tải</h3>
+                <p id="active-downloads-count">0</p>
+            </div>
+            <div class="card">
+                <h3>Đã Lưu</h3>
+                <p id="saved-videos-count">0</p>
+            </div>
+            <div class="card">
+                <h3>Thành Công</h3>
+                <p id="stats-success">0</p>
+            </div>
+            <div class="card">
+                <h3>Thất Bại</h3>
+                <p id="stats-failed">0</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Thư Viện Video</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên Streamer</th>
+                        <th>Thời Lượng</th>
+                        <th>Ngày Tải</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody id="video-list">
+                    <!-- Dữ liệu video sẽ được chèn vào đây -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="view-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h3 id="view-modal-title">Xem Video</h3>
+            <video id="modal-video-player" controls></video>
+        </div>
+    </div>
+
+    <div id="cut-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h3>Cắt Highlight</h3>
+            <p>Video: <strong id="cut-modal-video-name"></strong></p>
+            <form id="cut-form">
+                <div class="form-group">
+                    <label for="start-time">Bắt đầu (hh:mm:ss)</label>
+                    <input type="text" id="start-time" placeholder="00:10:00" required>
+                </div>
+                <div class="form-group">
+                    <label for="end-time">Kết thúc (hh:mm:ss)</label>
+                    <input type="text" id="end-time" placeholder="00:15:30" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Tạo Clip</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
